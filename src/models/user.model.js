@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
+
 /**
  * @swagger
  *  components:
@@ -13,25 +14,21 @@ const { Schema } = mongoose;
  *        properties:
  *          username:
  *            type: string
- *            format: email
- *            description: Email for the user, needs to be unique.
+ *            example: Luard
  *          password:
  *            type: string
- *            description: Password needed to login.
+ *            format: password
+ *            example: luard123
  *          firstName:
  *            type: string
+ *            example: Luard
  *          lastName:
  *            type: string
+ *            example: Castellanos
  *          email:
  *            type: string
  *            format: email
- *            description: Email for the user.
- *        example:
- *           username: Luard
- *           password: luard123
- *           firstName: luard123
- *           lastName: luard123
- *           email: luard123
+ *            example: luard.developer@gmail.com
  */
 
 const schema = new Schema({
