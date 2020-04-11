@@ -6,53 +6,41 @@ const router = express.Router();
 // Routes
 /**
  * @swagger
+ *
  * /v1/user/authenticate:
  *  post:
- *      summary: Authenticate user.
+ *      description: Authenticate user.
  *      tags:
  *          - User
- *      consumes:
- *          - application/json
  *      requestBody:
- *       content:
- *         'application/json':
- *           schema:
- *             username:
- *               type: string
- *             password:
- *               type: string
- *             example:
- *               username: Luard
- *               password: luard123
+ *          required: true
+ *          content:
+ *              'application/json':
+ *                  schema:
+ *                      $ref: '#/components/schemas/User'
+ *                  example:
+ *                      username: Luard
+ *                      password: luard123
  *      responses:
  *          '200':
  *            description: OK.
+ */
+router.post('/authenticate', userController.authenticate);
+
+/**
+ * @swagger
+ *
  * /v1/user/register:
  *  post:
- *      summary: Register user.
+ *      description: Register user.
  *      tags:
  *          - User
- *      consumes:
- *          - application/json
  *      requestBody:
+ *       required: true
  *       content:
  *         'application/json':
  *            schema:
- *              type: object
- *              required:
- *                  - username
- *                  - password
- *              properties:
- *                  username:
- *                      type: string
- *                  password:
- *                      type: string
- *                  firstName:
- *                      type: string
- *                  lastName:
- *                      type: string
- *                  email:
- *                      type: string
+ *              $ref: '#/components/schemas/User'
  *            example:
  *              username: Luard
  *              password: luard123
@@ -63,8 +51,6 @@ const router = express.Router();
  *          '200':
  *            description: OK.
  */
-
-router.post('/authenticate', userController.authenticate);
 router.post('/register', userController.register);
 
 module.exports = router;

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --detectOpenHandles",
     "lint": "eslint ./ --ext *js --fix",
-    "swagger": "swagger-jsdoc-generator swaggerOptions.js"
+    "swagger": "openapi-generator generate -i http://localhost/api-docs.json -g javascript -o generated-sources/openapi "
   },
   "keywords": [
     "node",
@@ -31,12 +31,12 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^1.0.12-4.3.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "jest": "^25.3.0",
-    "supertest": "^4.0.2",
-    "swagger-jsdoc-generator": "^1.0.3"
+    "supertest": "^4.0.2"
   },
   "jest": {
     "testEnvironment": "node",
