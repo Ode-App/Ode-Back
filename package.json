@@ -1,0 +1,49 @@
+{
+  "name": "ode-backend",
+  "version": "1.0.0",
+  "description": "Backend for Ode App",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "lint": "eslint ./ --ext *js --fix"
+  },
+  "keywords": [
+    "node",
+    "ode",
+    "swagger",
+    "mongodb"
+  ],
+  "author": "Luard",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "rootpath": "^0.1.2",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.3.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "collectCoverage": true
+  }
+}
