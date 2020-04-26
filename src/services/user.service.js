@@ -15,7 +15,7 @@ async function authenticate(username, password) {
       token,
     };
   }
-  return null;
+  throw new Error('Username or password is incorrect');
 }
 
 async function register(username, password, firstName, lastName, email) {
@@ -36,8 +36,8 @@ async function register(username, password, firstName, lastName, email) {
   try {
     const user = new User({
       username,
-      firstName: password,
-      lastName: firstName,
+      firstName,
+      lastName,
       email,
     });
     // Hash password
